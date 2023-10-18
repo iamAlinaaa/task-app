@@ -22,7 +22,7 @@ const Header: React.FC<Properties> = ({ tasksData, setFilteredTasks }) => {
 
   useEffect(() => {
     applyFilters();
-  }, [filters, tasksData]); // Apply filters whenever filters or tasksData change
+  }, [filters, tasksData]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilters((prevFilters) => ({
