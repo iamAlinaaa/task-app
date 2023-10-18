@@ -63,35 +63,39 @@ const Header: React.FC<Properties> = ({ tasksData, setFilteredTasks }) => {
   };
 
   return (
-    <div className={styles["header-container"]}>
-      <form autoComplete="off">
-        <label className={styles["search-container"]}>
-          <input
-            name="search"
-            type="search"
-            placeholder="Search by Title"
-            onChange={handleSearchChange}
-          />
-        </label>
-        <label className={styles["filter-container"]}>
-          <select name="priority" onChange={handlePriorityChange}>
-            <option value="">Filter by Priority</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
-        </label>
-        <label className={styles["filter-container"]}>
-          <select name="status" onChange={handleStatusChange}>
-            <option value="">Filter by Status</option>
-            <option value="To Do">To Do</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Done">Done</option>
-          </select>
-        </label>
-      </form>
-    </div>
+    // <div className={styles["header-container"]}>
+    <form className={styles["header-container"]} autoComplete="off">
+      <label className={styles["search-container"]}>
+        <input
+          name="search"
+          type="search"
+          placeholder="Search by Title"
+          onChange={handleSearchChange}
+        />
+      </label>
+      <div className={styles['filters']}>
+      <label className={styles["filter-container"]}>
+        <select name="priority" onChange={handlePriorityChange}>
+          <option value="">Filter by priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </label>
+      <label className={styles["filter-container"]}>
+        <select name="status" onChange={handleStatusChange}>
+          <option value="">Filter by status</option>
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+      </label>
+      </div>
+    </form>
+    // </div>
   );
 };
 
 export { Header };
+
+// max-width: var(--container-width);
