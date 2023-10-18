@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import styles from "./App.module.css";
+import { AppBackground } from "./components/components";
+import { AddTaskButton } from "./components/components";
+import { TaskModal } from "./components/components";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSaveNewTask = () => {
+    console.log("SAVED");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppBackground>
+      <div className={styles["bottom-button-container"]}>
+        <AddTaskButton onClick={openModal} />
+      </div>
+      {isModalOpen && (
+        <TaskModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          onSave={handleSaveNewTask}
+        />
+      )}
+    </AppBackground>
   );
 }
 
