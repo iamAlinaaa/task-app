@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 
 type Properties = {
   isOpen: boolean;
-  onClose: React.MouseEventHandler<HTMLButtonElement>;
+  onClose: () => void;
   onSave: (task: Task) => void;
 };
 
@@ -25,8 +25,8 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
 
   const handleSave = () => {
     onSave(newTask);
-    console.log(newTask);
     dispatch(actions.addTask(newTask));
+    onClose();
   };
 
   return isOpen ? (
@@ -99,7 +99,9 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
                     ? styles["medium-progress"]
                     : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, status: "In Progress" })}
+                onClick={() =>
+                  setNewTask({ ...newTask, status: "In Progress" })
+                }
               >
                 In Progress
               </button>
