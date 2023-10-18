@@ -3,3 +3,4 @@ export { TaskItem } from "./task-item/task-item";
 export { AddTaskButton } from "./add-task-button/add-task-button";
 export { TaskModal } from "./task-modal/task-modal";
 export { TaskList } from "./task-list/task-list";
+export { Header } from "./header/header";

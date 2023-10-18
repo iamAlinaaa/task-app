@@ -1,18 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { TaskItem } from "../components";
 import type { Task } from "../../slices/task-slice";
 
-const TaskList: React.FC = () => {
-  const { allTasks } = useSelector(({ tasks }) => {
-    return {
-      allTasks: tasks.tasks,
-    };
-  });
+import styles from "./styles.module.css";
 
+type Properties = {
+  tasksData: Task[];
+};
+
+const TaskList: React.FC<Properties> = ({ tasksData }) => {
   return (
-    <div>
-      {allTasks.map((task: Task) => (
+    <div className={styles["task-list-container"]}>
+      {tasksData.map((task: Task) => (
         <TaskItem key={task.id} task={task} />
       ))}
     </div>
