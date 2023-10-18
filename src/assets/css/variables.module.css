@@ -6,8 +6,10 @@
   --violet-200: #8e76e7;
   --blue-100: #93c1ed;
   --blue-200: #5fa3e2;
+  --gray-alpha-1: rgba(0, 0, 0, 0.1);
   --gray-alpha-2: rgba(0, 0, 0, 0.2);
   --gray-alpha-3: rgba(0, 0, 0, 0.3);
   --gray-alpha-5: rgba(0, 0, 0, 0.5);
   --white-alpha-2: rgba(255, 255, 255, 0.2);
+  --white-alpha-3: rgba(255, 255, 255, 0.3);
 }

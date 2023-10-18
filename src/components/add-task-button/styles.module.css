@@ -1,9 +1,11 @@
+@import "../../assets/css/variables.module.css";
+
 .glass-button-container {
   position: relative;
 }
 
 .glass-button {
-  background: rgba(255, 255, 255, 0.2);
+  background: var( --white-alpha-2);
   color: #fff;
   border: none;
   padding: 12px 16px;
@@ -17,7 +19,7 @@
 }
 
 .glass-button:hover {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background:  var( --white-alpha-3);
+  box-shadow: 0 4px 6px var(--gray-alpha-1);
   transform: scale(1.02);
 }
