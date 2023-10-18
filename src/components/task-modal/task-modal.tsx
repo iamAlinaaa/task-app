@@ -20,7 +20,7 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
     title: "",
     description: "",
     priority: "Low",
-    status: "ToDo",
+    status: "To Do",
   });
 
   const handleSave = () => {
@@ -87,9 +87,9 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
             <div className={styles["priority-status-buttons"]}>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.status === "ToDo" ? styles["high-todo"] : ""
+                  newTask.status === "To Do" ? styles["high-todo"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, status: "ToDo" })}
+                onClick={() => setNewTask({ ...newTask, status: "To Do" })}
               >
                 To Do
               </button>

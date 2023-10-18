@@ -5,7 +5,7 @@ export type Task = {
     title: string;
     description: string;
     priority: "High" | "Medium" | "Low";
-    status: "ToDo" | "In Progress" | "Done";
+    status: "To Do" | "In Progress" | "Done";
   };
   
 
@@ -38,7 +38,7 @@ const { reducer, actions, name } = createSlice({
     toggleTaskStatus: (state, action: PayloadAction<string>) => {
       const task = state.tasks.find((task) => task.id === action.payload);
       if (task) {
-        task.status = task.status === "Done" ? "ToDo" : "Done";
+        task.status = task.status === "Done" ? "To Do" : "Done";
       }
     },
   },
