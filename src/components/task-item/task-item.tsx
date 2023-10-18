@@ -27,8 +27,38 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
       <p>
         {task.description !== "" ? task.description : "Add your description"}
       </p>
-      <p>{task.priority} Priority</p>
-      <p>{task.status}</p>
+      <div className={styles['priority-status-container']}>
+      <p
+        className={
+          styles[
+            `${
+              task.priority === "High"
+                ? "high-todo"
+                : task.priority === "Medium"
+                ? "medium-progress"
+                : "low-done"
+            }`
+          ]
+        }
+      >
+        {task.priority}
+      </p>
+      <p
+        className={
+          styles[
+            `${
+              task.status === "To Do"
+                ? "high-todo"
+                : task.status === "In Progress"
+                ? "medium-progress"
+                : "low-done"
+            }`
+          ]
+        }
+      >
+        {task.status}
+      </p>
+      </div>
       <div onClick={handleToggleStatus}>
         <FontAwesomeIcon icon={faCircleCheck} />
       </div>
