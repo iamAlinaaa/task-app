@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { v4 as uuidv4 } from "uuid";
+import type { Task } from "../../slices/task-slice";
+import { useDispatch } from "react-redux";
+import { actions } from "../../slices/task-slice";
 import styles from "./styles.module.css";
 
 type Properties = {
@@ -9,23 +13,20 @@ type Properties = {
   onSave: (task: Task) => void;
 };
 
-type Task = {
-  title: string;
-  description: string;
-  priority: "high" | "medium" | "low";
-  status: "toDo" | "inProgress" | "done";
-};
-
 const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
+  const dispatch = useDispatch();
   const [newTask, setNewTask] = useState<Task>({
+    id: uuidv4(),
     title: "",
     description: "",
-    priority: "low",
-    status: "toDo",
+    priority: "Low",
+    status: "ToDo",
   });
 
   const handleSave = () => {
     onSave(newTask);
+    console.log(newTask);
+    dispatch(actions.addTask(newTask));
   };
 
   return isOpen ? (
@@ -44,13 +45,12 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
           </div>
           <div className={styles["input-container"]}>
             <textarea
-            rows={7}
+              rows={7}
               placeholder="Description"
               value={newTask.description}
               onChange={(e) =>
                 setNewTask({ ...newTask, description: e.target.value })
               }
-   
             />
           </div>
           <div className={styles["priority-status-container"]}>
@@ -58,25 +58,25 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
             <div className={styles["priority-status-buttons"]}>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.priority === "high" ? styles["high-todo"] : ""
+                  newTask.priority === "High" ? styles["high-todo"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, priority: "high" })}
+                onClick={() => setNewTask({ ...newTask, priority: "High" })}
               >
                 High
               </button>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.priority === "medium" ? styles["medium-progress"] : ""
+                  newTask.priority === "Medium" ? styles["medium-progress"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, priority: "medium" })}
+                onClick={() => setNewTask({ ...newTask, priority: "Medium" })}
               >
                 Medium
               </button>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.priority === "low" ? styles["low-done"] : ""
+                  newTask.priority === "Low" ? styles["low-done"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, priority: "low" })}
+                onClick={() => setNewTask({ ...newTask, priority: "Low" })}
               >
                 Low
               </button>
@@ -87,27 +87,27 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
             <div className={styles["priority-status-buttons"]}>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.status === "toDo" ? styles["high-todo"] : ""
+                  newTask.status === "ToDo" ? styles["high-todo"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, status: "toDo" })}
+                onClick={() => setNewTask({ ...newTask, status: "ToDo" })}
               >
                 To Do
               </button>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.status === "inProgress"
+                  newTask.status === "In Progress"
                     ? styles["medium-progress"]
                     : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, status: "inProgress" })}
+                onClick={() => setNewTask({ ...newTask, status: "In Progress" })}
               >
                 In Progress
               </button>
               <button
                 className={`${styles["priority-status-button"]} ${
-                  newTask.status === "done" ? styles["low-done"] : ""
+                  newTask.status === "Done" ? styles["low-done"] : ""
                 }`}
-                onClick={() => setNewTask({ ...newTask, status: "done" })}
+                onClick={() => setNewTask({ ...newTask, status: "Done" })}
               >
                 Done
               </button>

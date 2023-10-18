@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styles from "./App.module.css";
-import { AppBackground } from "./components/components";
-import { AddTaskButton } from "./components/components";
-import { TaskModal } from "./components/components";
+import {
+  AppBackground,
+  TaskList,
+  TaskModal,
+  AddTaskButton,
+} from "./components/components";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +24,7 @@ function App() {
 
   return (
     <AppBackground>
+      <TaskList />
       <div className={styles["bottom-button-container"]}>
         <AddTaskButton onClick={openModal} />
       </div>
