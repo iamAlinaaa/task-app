@@ -1,36 +1,64 @@
+@import "../../assets/css/variables.module.css";
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--gray-alpha-5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  backdrop-filter: blur(8px); 
+  backdrop-filter: blur(8px);
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--white-alpha-2);
   padding: 16px;
   border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.input-container {
+  margin: 10px 0;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 80%;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.input-container input::placeholder,
+.input-container textarea::placeholder {
+  color: var(--gray-alpha-5);
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+  border: 2px solid var(--violet-200);
 }
 
 .button {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--gray-alpha-2);
   color: #fff;
   border: none;
   height: 40px;
   width: 40px;
-  margin: 16px 10px 0 10px;
+  margin: 16px 30px 0 30px;
   cursor: pointer;
   border-radius: 20px;
 }
 
 .button:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--gray-alpha-3);
 }
 
 .modal-content {
@@ -41,15 +69,14 @@
 
 label {
   display: block;
-  margin-bottom: 10px;
+  color: var(--white);
 }
 
 .priority-status-container {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   gap: 10px;
-  margin: 20px ;
+  margin: 20px;
 }
 
 .priority-status-buttons {
@@ -69,7 +96,6 @@ label {
   justify-content: center;
 }
 
-
 select {
   width: 100%;
   padding: 10px;
@@ -80,46 +106,19 @@ select {
 }
 
 .high-todo {
-  border: 3px solid #e07dce;
-  background-color: #e0a0d4;
-  color: white;
+  border: 3px solid var(--pink-200);
+  background-color: var(--pink-100);
+  color: var(--white);
 }
 
 .medium-progress {
-  border: 3px solid #8e76e7;
-  background-color: #b5a5ee;
-  color: white;
+  border: 3px solid var(--violet-200);
+  background-color: var(--violet-100);
+  color: var(--white);
 }
 
 .low-done {
-  border: 3px solid #5fa3e2;
-  background-color: #93c1ed;
-  color: white;
-}
-
-
-
-.input-container {
-  margin: 10px 0; /* Add spacing between input elements */
-}
-
-.input-container input,
-.input-container textarea {
-  width: 80%;
-  padding: 10px;
-  border: 2px solid transparent; 
-  border-radius: 5px;
-  outline: none;
-  font-size: 16px; 
-  resize: none;
-}
-
-.input-container input::placeholder,
-.input-container textarea::placeholder {
-  color: rgba(0, 0, 0, 0.5); 
-}
-
-.input-container input:focus,
-.input-container textarea:focus {
-  border: 2px solid #8e76e7;
+  border: 3px solid var(--blue-200);
+  background-color: var(--blue-100);
+  color: var(--white);
 }
