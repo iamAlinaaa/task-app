@@ -1,16 +1,6 @@
-.tasks-container {
-  overflow-y: auto; 
-  border: 1px solid var(--gray-alpha-3); 
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: self-start;
-}
-
 .bottom-button-container {
   position: fixed;
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-} 
-
+}
