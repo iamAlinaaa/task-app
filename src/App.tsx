@@ -22,10 +22,6 @@ function App() {
     setIsModalOpen(false);
   };
 
-  const handleSaveNewTask = () => {
-    console.log("SAVED");
-  };
-
   const { allTasks } = useSelector(({ tasks }) => {
     return {
       allTasks: tasks.tasks,
@@ -34,10 +30,8 @@ function App() {
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-
-    // Dispatch the loaded tasks to your Redux store
     dispatch(actions.loadTasks(storedTasks));
-  }, [dispatch]); // This effect will run once when the component mounts
+  }, [dispatch]);
 
   const [filteredTasks, setFilteredTasks] = useState(allTasks);
 
@@ -54,7 +48,6 @@ function App() {
         <TaskModal
           isOpen={isModalOpen}
           onClose={closeModal}
-          onSave={handleSaveNewTask}
         />
       )}
     </AppBackground>

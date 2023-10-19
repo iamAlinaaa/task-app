@@ -10,10 +10,9 @@ import styles from "./styles.module.css";
 type Properties = {
   isOpen: boolean;
   onClose: () => void;
-  onSave: (task: Task) => void;
 };
 
-const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
+const TaskModal: React.FC<Properties> = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const [newTask, setNewTask] = useState<Task>({
     id: uuidv4(),
@@ -24,7 +23,6 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
   });
 
   const handleSave = () => {
-    onSave(newTask);
     dispatch(actions.addTask(newTask));
     onClose();
   };
@@ -41,7 +39,7 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose, onSave }) => {
             onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
           />
           <textarea
-          className={styles["input"]}
+            className={styles["input"]}
             rows={7}
             placeholder="Description"
             value={newTask.description}
