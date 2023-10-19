@@ -11,6 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px 25px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .filters {
@@ -19,16 +20,18 @@
   align-items: center; 
   margin: 10px;
 
-}
 
+}
 .filter-container {
   margin: 10px;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
 }
 
+.filter-container select {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .search-container input {
   padding: 10px;
