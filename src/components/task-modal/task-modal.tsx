@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import type { Task } from "../../slices/task-slice";
 import { useDispatch } from "react-redux";
 import { actions } from "../../slices/task-slice";
+import { useSelector } from "react-redux";
 import styles from "./styles.module.css";
 
 type Properties = {
@@ -14,16 +15,29 @@ type Properties = {
 
 const TaskModal: React.FC<Properties> = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
-  const [newTask, setNewTask] = useState<Task>({
-    id: uuidv4(),
-    title: "",
-    description: "",
-    priority: "Low",
-    status: "To Do",
+  const { taskToEdit } = useSelector(({ tasks }) => {
+    return {
+      taskToEdit: tasks.taskToEdit,
+    };
   });
+  console.log(taskToEdit);
+
+  const [newTask, setNewTask] = useState<Task>(
+    taskToEdit
+      ? { ...taskToEdit }
+      : {
+          id: uuidv4(),
+          title: "",
+          description: "",
+          priority: "Low",
+          status: "To Do",
+        }
+  );
 
   const handleSave = () => {
-    dispatch(actions.addTask(newTask));
+    taskToEdit
+      ? dispatch(actions.updateTask(newTask))
+      : dispatch(actions.addTask(newTask));
     onClose();
   };
 

@@ -4,11 +4,11 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./styles.module.css";
 
-type AddTaskButtonProps = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+type Properties = {
+  onClick: () => void;
 };
 
-const AddTaskButton: React.FC<AddTaskButtonProps> = ({ onClick }) => {
+const AddTaskButton: React.FC<Properties> = ({ onClick }) => {
   return (
     <div className={styles["glass-button-container"]}>
       <button className={styles["glass-button"]} onClick={onClick}>

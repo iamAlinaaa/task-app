@@ -65,6 +65,6 @@
   border-radius: 18px;
 }
 
-.task-done {
-  background: var(--violet-200);
+.button:hover {
+  background: var(--gray-alpha-3);
 }

@@ -10,12 +10,13 @@ export type Task = {
 
 type State = {
   tasks: Task[];
+  taskToEdit: Task | null;
 };
 
 const initialState: State = {
   tasks: [],
+  taskToEdit: null,
 };
-
 const saveTasksToLocalStorage = (tasks: Task[]) => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
@@ -50,6 +51,9 @@ const { reducer, actions, name } = createSlice({
     },
     loadTasks: (state, action: PayloadAction<Task[]>) => {
       state.tasks = action.payload;
+    },
+    setSelectedTask: (state, action) => {
+      state.taskToEdit = action.payload;
     },
   },
 });

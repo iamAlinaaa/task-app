@@ -14,12 +14,17 @@ function App() {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
+  const addNewTask = () => {
+    dispatch(actions.setSelectedTask(null));
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleEditTask = () => {
+    setIsModalOpen(true);
   };
 
   const { allTasks } = useSelector(({ tasks }) => {
@@ -39,17 +44,12 @@ function App() {
     <AppBackground>
       <Header tasksData={allTasks} setFilteredTasks={setFilteredTasks} />
       <div className={styles["tasks-container"]}>
-        <TaskList tasksData={filteredTasks} />
+        <TaskList tasksData={filteredTasks} onEditTask={handleEditTask} />
       </div>
       <div className={styles["bottom-button-container"]}>
-        <AddTaskButton onClick={openModal} />
+        <AddTaskButton onClick={addNewTask} />
       </div>
-      {isModalOpen && (
-        <TaskModal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-        />
-      )}
+      {isModalOpen && <TaskModal isOpen={isModalOpen} onClose={closeModal} />}
     </AppBackground>
   );
 }

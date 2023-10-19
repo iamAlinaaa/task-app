@@ -8,21 +8,28 @@ import {
   faTrashCan,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./styles.module.css";
 
-type TaskItemProps = {
+type Properties = {
   task: Task;
+  onEditTask: () => void;
 };
 
-const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+const TaskItem: React.FC<Properties> = ({ task, onEditTask }) => {
   const dispatch = useDispatch();
 
-  const handleRemove = () => {
+  const handleRemoveTask = () => {
     dispatch(actions.removeTask(task.id));
   };
 
   const handleToggleStatus = () => {
     dispatch(actions.toggleTaskStatus(task.id));
+  };
+
+  const handleEditTask = () => {
+    dispatch(actions.setSelectedTask(task));
+    onEditTask();
   };
 
   return (
@@ -64,7 +71,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
         </p>
       </div>
       <div className={styles["icon-container"]}>
-        <button className={styles["button"]}>
+        <button className={styles["button"]} onClick={handleEditTask}>
           <FontAwesomeIcon icon={faPenToSquare} fontSize={16} />
         </button>
         {task.status !== "Done" && (
@@ -72,7 +79,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
             <FontAwesomeIcon icon={faCheck} fontSize={16} />
           </button>
         )}
-        <button className={styles["button"]} onClick={handleRemove}>
+        <button className={styles["button"]} onClick={handleRemoveTask}>
           <FontAwesomeIcon icon={faTrashCan} fontSize={16} />
         </button>
       </div>

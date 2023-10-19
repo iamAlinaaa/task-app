@@ -6,13 +6,14 @@ import styles from "./styles.module.css";
 
 type Properties = {
   tasksData: Task[];
+  onEditTask: () => void;
 };
 
-const TaskList: React.FC<Properties> = ({ tasksData }) => {
+const TaskList: React.FC<Properties> = ({ tasksData, onEditTask }) => {
   return (
     <div className={styles["task-list-container"]}>
       {tasksData.map((task: Task) => (
-        <TaskItem key={task.id} task={task} />
+        <TaskItem key={task.id} task={task} onEditTask={onEditTask} />
       ))}
     </div>
   );
