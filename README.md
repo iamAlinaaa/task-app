@@ -6,19 +6,29 @@ Download the project from github and cd to the project directory, then you can r
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**Features** 
+**Features**:
 
-+Create and Edit Tasks: Add tasks with titles, descriptions, priorities (high, medium, low), and statuses (done, not done, in progress). Edit tasks as needed.
+**Create and Edit Tasks**: *Add tasks with titles, descriptions, priorities (high, medium, low), and statuses (done, not done, in progress). Edit tasks as needed.*
 
-+Delete Tasks: Remove tasks you no longer need.
+**Delete Tasks**: *Remove tasks you no longer need.*
 
-+Task Status: Mark tasks as complete.
+**Task Status**: *Mark tasks as complete.*
 
-+Filter and Search: Filter tasks by status and priority, and search for tasks by title.
+**Filter and Search**: *Filter tasks by status and priority, and search for tasks by title.*
 
-+Local Storage: Your tasks are automatically saved in local storage for persistence.
+**Local Storage**: *Your tasks are automatically saved in local storage for persistence.*
 
-+Bonus Features: Sort tasks by different attributes (title, priority, status).
+**Bonus Features**: *Sort tasks by different attributes (title, priority, status).*
+
+
+**Technologies Used**:
+
+*React for building the UI.*
+
+*Redux for state management.*
+
+*CSS for styling.*
+
 
 **App Preview**
 ![Снимок экрана 2023-10-19 145007](https://github.com/iamAlinaaa/task-app/assets/111873795/8a876def-be6c-44d7-bb2d-f4fa2ac89513)
@@ -27,9 +37,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ![Снимок экрана 2023-10-19 144828](https://github.com/iamAlinaaa/task-app/assets/111873795/614a3823-ba44-480a-ad48-3f0de09355c3)
 ![Снимок экрана 2023-10-19 144817](https://github.com/iamAlinaaa/task-app/assets/111873795/6efdf369-e20a-41de-91ad-0889c25c67b4)
 
-
-**Technologies Used**
-
-React for building the UI.
-Redux for state management.
-CSS for styling.
