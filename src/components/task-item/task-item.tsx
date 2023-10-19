@@ -3,7 +3,11 @@ import type { Task } from "../../slices/task-slice";
 import { useDispatch } from "react-redux";
 import { actions } from "../../slices/task-slice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faTrashCan,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.css";
 
 type TaskItemProps = {
@@ -27,43 +31,50 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
       <p>
         {task.description !== "" ? task.description : "Add your description"}
       </p>
-      <div className={styles['priority-status-container']}>
-      <p
-        className={
-          styles[
-            `${
-              task.priority === "High"
-                ? "high-todo"
-                : task.priority === "Medium"
-                ? "medium-progress"
-                : "low-done"
-            }`
-          ]
-        }
-      >
-        {task.priority}
-      </p>
-      <p
-        className={
-          styles[
-            `${
-              task.status === "To Do"
-                ? "high-todo"
-                : task.status === "In Progress"
-                ? "medium-progress"
-                : "low-done"
-            }`
-          ]
-        }
-      >
-        {task.status}
-      </p>
+      <div className={styles["priority-status-container"]}>
+        <p
+          className={
+            styles[
+              `${
+                task.priority === "High"
+                  ? "high-todo"
+                  : task.priority === "Medium"
+                  ? "medium-progress"
+                  : "low-done"
+              }`
+            ]
+          }
+        >
+          {task.priority}
+        </p>
+        <p
+          className={
+            styles[
+              `${
+                task.status === "To Do"
+                  ? "high-todo"
+                  : task.status === "In Progress"
+                  ? "medium-progress"
+                  : "low-done"
+              }`
+            ]
+          }
+        >
+          {task.status}
+        </p>
       </div>
-      <div onClick={handleToggleStatus}>
-        <FontAwesomeIcon icon={faCircleCheck} />
-      </div>
-      <div onClick={handleRemove}>
-        <FontAwesomeIcon icon={faTrashCan} />
+      <div className={styles["icon-container"]}>
+        <button className={styles["button"]}>
+          <FontAwesomeIcon icon={faPenToSquare} fontSize={16} />
+        </button>
+        {task.status !== "Done" && (
+          <button className={styles["button"]} onClick={handleToggleStatus}>
+            <FontAwesomeIcon icon={faCheck} fontSize={16} />
+          </button>
+        )}
+        <button className={styles["button"]} onClick={handleRemove}>
+          <FontAwesomeIcon icon={faTrashCan} fontSize={16} />
+        </button>
       </div>
     </div>
   );
