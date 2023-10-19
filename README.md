@@ -31,9 +31,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 **App Preview**
-![Снимок экрана 2023-10-19 145007](https://github.com/iamAlinaaa/task-app/assets/111873795/8a876def-be6c-44d7-bb2d-f4fa2ac89513)
-![Снимок экрана 2023-10-19 144942](https://github.com/iamAlinaaa/task-app/assets/111873795/5d604f25-9e98-42f3-958f-99129312123a)
-![Снимок экрана 2023-10-19 144836](https://github.com/iamAlinaaa/task-app/assets/111873795/52598b25-d505-40b3-a98d-dcd4c47a4340)
-![Снимок экрана 2023-10-19 144828](https://github.com/iamAlinaaa/task-app/assets/111873795/614a3823-ba44-480a-ad48-3f0de09355c3)
-![Снимок экрана 2023-10-19 144817](https://github.com/iamAlinaaa/task-app/assets/111873795/6efdf369-e20a-41de-91ad-0889c25c67b4)
+
+![Снимок экрана 2023-10-19 144836](https://github.com/iamAlinaaa/task-app/assets/111873795/44ca7bc8-71f1-442b-a277-a640e9d5627a)
+![Снимок экрана 2023-10-19 144828](https://github.com/iamAlinaaa/task-app/assets/111873795/5a706e72-cdb8-44c7-8011-95b0f8c237e1)
+![Снимок экрана 2023-10-19 144817](https://github.com/iamAlinaaa/task-app/assets/111873795/12bc01c4-b74b-42f6-8054-063127ff804a)
+![Снимок экрана 2023-10-19 145007](https://github.com/iamAlinaaa/task-app/assets/111873795/5462a912-a36a-43a1-b3fd-efb4a2ae65a7)
+![Снимок экрана 2023-10-19 144942](https://github.com/iamAlinaaa/task-app/assets/111873795/23718a09-0295-4e3f-b2b5-d91ec185ec27)
+
 
