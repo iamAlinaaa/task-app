@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+## **Task Manager App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
+Download the project from github and cd to the project directory, then you can run:
+### `npm install`
 ### `npm start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Features**:
 
-### `npm test`
+**Create and Edit Tasks**: *Add tasks with titles, descriptions, priorities (high, medium, low), and statuses (done, not done, in progress). Edit tasks as needed.*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Delete Tasks**: *Remove tasks you no longer need.*
 
-### `npm run build`
+**Task Status**: *Mark tasks as complete.*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Filter and Search**: *Filter tasks by status and priority, and search for tasks by title.*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Local Storage**: *Your tasks are automatically saved in local storage for persistence.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Bonus Features**: *Sort tasks by different attributes (title, priority, status).*
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Technologies Used**:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*React for building the UI.*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+*Redux for state management.*
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*CSS for styling.*
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**App Preview**
+![Снимок экрана 2023-10-19 145007](https://github.com/iamAlinaaa/task-app/assets/111873795/8a876def-be6c-44d7-bb2d-f4fa2ac89513)
+![Снимок экрана 2023-10-19 144942](https://github.com/iamAlinaaa/task-app/assets/111873795/5d604f25-9e98-42f3-958f-99129312123a)
+![Снимок экрана 2023-10-19 144836](https://github.com/iamAlinaaa/task-app/assets/111873795/52598b25-d505-40b3-a98d-dcd4c47a4340)
+![Снимок экрана 2023-10-19 144828](https://github.com/iamAlinaaa/task-app/assets/111873795/614a3823-ba44-480a-ad48-3f0de09355c3)
+![Снимок экрана 2023-10-19 144817](https://github.com/iamAlinaaa/task-app/assets/111873795/6efdf369-e20a-41de-91ad-0889c25c67b4)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
