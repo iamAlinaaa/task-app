@@ -43,9 +43,9 @@ function App() {
   return (
     <AppBackground>
       <Header tasksData={allTasks} setFilteredTasks={setFilteredTasks} />
-      <div className={styles["tasks-container"]}>
+      {/* <div className={styles["tasks-container"]}> */}
         <TaskList tasksData={filteredTasks} onEditTask={handleEditTask} />
-      </div>
+      {/* </div> */}
       <div className={styles["bottom-button-container"]}>
         <AddTaskButton onClick={addNewTask} />
       </div>

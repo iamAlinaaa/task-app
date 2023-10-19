@@ -33,9 +33,9 @@ const TaskItem: React.FC<Properties> = ({ task, onEditTask }) => {
   };
 
   return (
-    <div className={styles["task-item"]}>
+    <li className={styles["task-item"]}>
       <h3>{task.title !== "" ? task.title : "Add your title"}</h3>
-      <p>
+      <p className={styles["description"]}>
         {task.description !== "" ? task.description : "Add your description"}
       </p>
       <div className={styles["priority-status-container"]}>
@@ -83,7 +83,7 @@ const TaskItem: React.FC<Properties> = ({ task, onEditTask }) => {
           <FontAwesomeIcon icon={faTrashCan} fontSize={16} />
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 

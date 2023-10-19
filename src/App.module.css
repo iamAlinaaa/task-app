@@ -1,13 +1,10 @@
 .tasks-container {
-
-  overflow-y: auto; /* Enable vertical scrolling when content overflows the container */
-  border: 1px solid var(--gray-alpha-3); /* Border for visualization */
-
+  overflow-y: auto; 
+  border: 1px solid var(--gray-alpha-3); 
   padding: 20px;
-
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: self-start;
 }
 
 .bottom-button-container {
@@ -15,4 +12,5 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-}
+} 
+

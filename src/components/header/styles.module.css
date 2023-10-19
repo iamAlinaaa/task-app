@@ -1,26 +1,20 @@
 @import "../../assets/css/variables.module.css";
 .header-container {
-  background: var(--violet-200);
-  border: 1px solid var(--gray-alpha-3);
-  border-radius: 12px;
-  padding: 16px;
-  margin: 16px;
-  box-shadow: 0px 4px 6px var(--gray-alpha-5);
+  background: var(--violet-alpha-5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 4px 6px var(--gray-alpha-3);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px 25px;
   font-family: "Montserrat", sans-serif;
 }
 
 .filters {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   margin: 10px;
-
-
 }
 .filter-container {
   margin: 10px;
@@ -30,16 +24,19 @@
 }
 
 .filter-container select {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .search-container input {
-  padding: 10px;
+  padding: 6px;
   border: 2px solid transparent;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  margin-left: 20px;
+  margin-top: 6px;
+  width: 320px;
 }
 
 .search-container input::placeholder {

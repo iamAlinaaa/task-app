@@ -11,11 +11,11 @@ type Properties = {
 
 const TaskList: React.FC<Properties> = ({ tasksData, onEditTask }) => {
   return (
-    <div className={styles["task-list-container"]}>
-      {tasksData.map((task: Task) => (
-        <TaskItem key={task.id} task={task} onEditTask={onEditTask} />
-      ))}
-    </div>
+      <ul className={styles["task-list-container"]}>
+        {tasksData.map((task: Task) => (
+          <TaskItem key={task.id} task={task} onEditTask={onEditTask} />
+        ))}
+      </ul>
   );
 };
 

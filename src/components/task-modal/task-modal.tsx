@@ -54,6 +54,7 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose }) => {
           />
           <textarea
             className={styles["input"]}
+            maxLength={300}
             rows={7}
             placeholder="Description"
             value={newTask.description}
