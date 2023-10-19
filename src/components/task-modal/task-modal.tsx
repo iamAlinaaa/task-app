@@ -20,7 +20,6 @@ const TaskModal: React.FC<Properties> = ({ isOpen, onClose }) => {
       taskToEdit: tasks.taskToEdit,
     };
   });
-  console.log(taskToEdit);
 
   const [newTask, setNewTask] = useState<Task>(
     taskToEdit
