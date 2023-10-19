@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./App.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   AppBackground,
   TaskList,
@@ -8,8 +8,10 @@ import {
   AddTaskButton,
   Header,
 } from "./components/components";
+import { actions } from "./slices/task-slice";
 
 function App() {
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -30,13 +32,20 @@ function App() {
     };
   });
 
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+    // Dispatch the loaded tasks to your Redux store
+    dispatch(actions.loadTasks(storedTasks));
+  }, [dispatch]); // This effect will run once when the component mounts
+
   const [filteredTasks, setFilteredTasks] = useState(allTasks);
 
   return (
     <AppBackground>
       <Header tasksData={allTasks} setFilteredTasks={setFilteredTasks} />
       <div className={styles["tasks-container"]}>
-        <TaskList tasksData={filteredTasks}/>
+        <TaskList tasksData={filteredTasks} />
       </div>
       <div className={styles["bottom-button-container"]}>
         <AddTaskButton onClick={openModal} />
